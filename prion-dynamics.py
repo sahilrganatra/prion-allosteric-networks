@@ -1,5 +1,5 @@
 # protein-dynamics script for analysis of two human prion protein states (normal & misfolded)
-# written by Sahil Ganatra, B.Sc.
+# written by Sahil Ganatra
 
 import prody
 import numpy as np
