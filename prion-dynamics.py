@@ -129,14 +129,16 @@ def cross_corr(anm_1, anm_2):
     cross_corr2.append(cross_corr_2KUN)
 
     # visualize each cross-correlation matrix as a heatmap
-    # 1QLX
     plt.figure(figsize = (10, 5))
+
+    # 1QLX
     plt.subplot(1, 2, 1)
     plt.imshow(cross_corr_1QLX, cmap = 'coolwarm', interpolation = 'nearest')
     plt.colorbar(shrink = 0.5)
     plt.title('1QLX')
     plt.xlabel('Residue Index')
     plt.ylabel('Residue Index')
+    
     # 2KUN
     plt.subplot(1, 2, 2)
     plt.imshow(cross_corr_2KUN, cmap = 'coolwarm', interpolation = 'nearest')
@@ -144,7 +146,7 @@ def cross_corr(anm_1, anm_2):
     plt.title('2KUN')
     plt.xlabel('Residue Index')
     plt.ylabel('Residue Index')
-    # show the plot
+    
     plt.tight_layout()
     plt.show()
 
@@ -232,6 +234,8 @@ def build_allosteric_networks(matrix1, matrix2, res_nums1, res_nums2, threshold,
 
     # visualize graph networks as two subplots
     plt.figure(figsize = (10, 7))
+
+    # graph 1
     plt.subplot(1, 2, 1)
     nx.draw_networkx_nodes(G1, pos, node_size = node_size1, node_color = 'purple', alpha = 0.8, label = f'{pdb_id1}')
     nx.draw_networkx_edges(G1, pos, width = edge_widths1, edge_color = 'purple', alpha = 0.5)
@@ -239,6 +243,7 @@ def build_allosteric_networks(matrix1, matrix2, res_nums1, res_nums2, threshold,
     plt.title(f'Allosteric Network: {pdb_id1} (Threshold = {threshold})')
     plt.axis('on')
 
+    # graph 2
     plt.subplot(1, 2, 2)
     nx.draw_networkx_nodes(G2, pos, node_size = node_size2, node_color = 'green', alpha = 0.8, label = f'{pdb_id2}')
     nx.draw_networkx_edges(G2, pos, width = edge_widths2, edge_color = 'green', alpha = 0.5)
